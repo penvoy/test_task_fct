@@ -3,7 +3,7 @@ from functools import lru_cache
 import threading
 
 #токен бота
-bot = telebot.TeleBot('TOKEN')
+bot = telebot.TeleBot('6432853446:AAFR9VbngAWHI5-kgMbZGYZmLyH3_lVLGSQ')
 
 #начальное значение мемоизации
 lru_cache(maxsize=128)
@@ -32,8 +32,15 @@ def handle_factorial(message):
         bot.reply_to(message, "Ошибка.Отправьте,пожалуйста,корректное целое число")
 
 def calculate_and_reply(message, num):
-    result = factorial(num)
-    bot.reply_to(message, f"Факториал числа {num} равен: {result}")
+    if num < -1000 or num > 1000: 
+            result = str(factorial(num))[:5] 
+    else: 
+        result = str(factorial(num)) 
+        bot.reply_to(message, f"Факториал числа {num} равен: {result}") 
+
 
 #запуск бота
 bot.polling(none_stop=True, interval=0)
+
+
+    
