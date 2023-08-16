@@ -3,7 +3,7 @@ from functools import lru_cache
 import threading
 
 #токен бота
-bot = telebot.TeleBot('6432853446:AAFR9VbngAWHI5-kgMbZGYZmLyH3_lVLGSQ')
+bot = telebot.TeleBot('TOKEN')
 
 #начальное значение мемоизации
 lru_cache(maxsize=128)
